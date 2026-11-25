@@ -1,0 +1,43 @@
+{
+  "name": "shopify-ucp-prober",
+  "version": "1.0.0",
+  "description": "Zero-dependency TypeScript starter for Shopify Global Catalog search, parallel Storefront UCP automatic cart discount probing, ZIP shipping verification, and native checkout handoff.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "shopify-ucp-prober": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "demo": "tsx src/cli.ts \"selvedge denim\" --max 150 --zip 10013 --demo",
+    "probe": "tsx src/cli.ts"
+  },
+  "keywords": [
+    "shopify",
+    "ucp",
+    "mcp",
+    "global-catalog",
+    "storefront",
+    "checkout",
+    "typescript"
+  ],
+  "author": "Sebastian Bryers",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
